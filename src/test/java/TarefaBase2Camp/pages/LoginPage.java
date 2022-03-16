@@ -1,6 +1,6 @@
-package TarefaBase2Camp.Pages;
+package TarefaBase2Camp.pages;
 
-import TarefaBase2Camp.Bases.PageBase;
+import TarefaBase2Camp.bases.PageBase;
 import org.openqa.selenium.By;
 
 public class LoginPage extends PageBase {

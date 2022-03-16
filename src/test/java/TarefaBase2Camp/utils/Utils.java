@@ -1,4 +1,4 @@
-package TarefaBase2Camp.Utils;
+package TarefaBase2Camp.utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,9 +8,9 @@ import java.util.Date;
 
 public class Utils {
 
-    public static String getNowDate(String mask){
-        DateFormat dateFormat = new SimpleDateFormat(mask);
-        Date date = new Date();
+    public static String getNowDate(Date mask){
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = mask;
         return dateFormat.format(date);
     }
 

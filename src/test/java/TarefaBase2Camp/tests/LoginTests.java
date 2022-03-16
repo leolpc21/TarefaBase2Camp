@@ -1,7 +1,7 @@
-package TarefaBase2Camp.Tests;
+package TarefaBase2Camp.tests;
 
-import TarefaBase2Camp.Bases.TestBase;
-import TarefaBase2Camp.Pages.LoginPage;
+import TarefaBase2Camp.bases.TestBase;
+import TarefaBase2Camp.pages.LoginPage;
 import org.junit.Assert;
 import org.junit.Test;
 

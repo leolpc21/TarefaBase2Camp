@@ -1,7 +1,7 @@
-package TarefaBase2Camp.Bases;
+package TarefaBase2Camp.bases;
 
 import TarefaBase2Camp.GlobalParameters;
-import TarefaBase2Camp.Utils.DriverUtils;
+import TarefaBase2Camp.utils.DriverUtils;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

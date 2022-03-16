@@ -1,6 +1,6 @@
-package TarefaBase2Camp.Flows;
+package TarefaBase2Camp.flows;
 
-import TarefaBase2Camp.Pages.LoginPage;
+import TarefaBase2Camp.pages.LoginPage;
 
 public class LoginFlows {
     LoginPage loginPage;

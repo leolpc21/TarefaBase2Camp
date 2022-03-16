@@ -1,4 +1,4 @@
-package TarefaBase2Camp.Utils;
+package TarefaBase2Camp.utils;
 
 import TarefaBase2Camp.GlobalParameters;
 import org.openqa.selenium.WebDriver;

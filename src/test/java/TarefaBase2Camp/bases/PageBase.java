@@ -1,7 +1,7 @@
-package TarefaBase2Camp.Bases;
+package TarefaBase2Camp.bases;
 
 import TarefaBase2Camp.GlobalParameters;
-import TarefaBase2Camp.Utils.DriverUtils;
+import TarefaBase2Camp.utils.DriverUtils;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
