@@ -86,6 +86,11 @@ public class PageBase {
         waitForElement(locator).sendKeys(text);
     }
 
+    protected void sendKeysUpload(By locator, String text){
+        WebElement uploadButton = driver.findElement(locator);
+        uploadButton.sendKeys(text);
+    }
+
     protected void sendKeysWithoutWaitVisible(By locator, String text){
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         WebElement element = driver.findElement(locator);

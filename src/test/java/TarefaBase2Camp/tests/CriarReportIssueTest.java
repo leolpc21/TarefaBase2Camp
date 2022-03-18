@@ -4,13 +4,9 @@ import TarefaBase2Camp.bases.TestBase;
 import TarefaBase2Camp.flows.LoginFlows;
 import TarefaBase2Camp.pages.CriarReportIssue;
 import TarefaBase2Camp.utils.Utils;
-import com.google.common.io.Resources;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.net.URL;
 import java.util.Date;
+import static org.junit.Assert.assertEquals;
 
 public class CriarReportIssueTest extends TestBase {
     LoginFlows loginFlows;
@@ -23,6 +19,7 @@ public class CriarReportIssueTest extends TestBase {
         loginFlows = new LoginFlows();
         criarReportIssue = new CriarReportIssue();
         utils = new Utils();
+        Date dataAtual = new Date();
 
         String usuario = "leonardo.costa";
         String senha = "1648";
@@ -32,16 +29,12 @@ public class CriarReportIssueTest extends TestBase {
         String prioridade = "urgent";
         String perfil = "PC Windows 11";
         String atribuir = "leonardo.costa";
-        Date dataAtual = new Date();
         String campoTitulo = "Titulo teste " + utils.getNowDate(dataAtual);
         String campoDescricao = "Campo de descrição do problema.";
         String campoReproducao = "Campo de descrição para reprodução do problema.";
         String campoAdicionalInfo = "Campo de descrição para informação adicional.";
-        // caminhoArquivo = "resources/files/anexoExemploB2.jpg";
-
-        // filePath = "anexoExemploB2.jpg";
-        //URL resource = Resources.getResource(filePath);
-        //String uploadFullPath = resource.toURI().getPath();
+        String caminhoArquivo = "/src/test/resources/files/anexoExemploB2.jpg";
+        String mensagemSucesso = "Operation successful.";
 
         loginFlows.efetuarLogin(usuario,senha);
         criarReportIssue.clicarNoLink();
@@ -55,7 +48,11 @@ public class CriarReportIssueTest extends TestBase {
         criarReportIssue.preencherDescription(campoDescricao);
         criarReportIssue.preencherStepsToReproduce(campoReproducao);
         criarReportIssue.preencherAdditionalInfo(campoAdicionalInfo);
-        //criarReportIssue.adicionarFile(caminhoArquivo);
+        criarReportIssue.adicionarFile(caminhoArquivo);
+        criarReportIssue.clicarStatusPrivate();
+        criarReportIssue.clicarButtonSubmit();
+
+        assertEquals(mensagemSucesso, criarReportIssue.retornaTextoSucesso().contains(mensagemSucesso));
 
     }
 }

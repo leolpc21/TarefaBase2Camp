@@ -17,6 +17,9 @@ public class CriarReportIssue extends PageBase {
     By reproduceTextArea = By.name("steps_to_reproduce");
     By additionalInfoTextArea = By.name("additional_info");
     By fileInput = By.id("ufile[]");
+    By statusPrivateInput = By.xpath("//input[@value='50']");
+    By buttonSubmitInput = By.xpath("//input[@value='Submit Report']");
+    By textoSucessoDiv = By.xpath("//div[contains(text(),’Operation successful.’)]");
 
     public void clicarNoLink(){
         click(linkText);
@@ -63,8 +66,20 @@ public class CriarReportIssue extends PageBase {
     }
 
     public void adicionarFile(String adicionarArquivo){
-        sendKeys(fileInput, adicionarArquivo);
+        String path = System.getProperty("user.dir");
+        sendKeysUpload(fileInput, path + adicionarArquivo);
     }
 
+    public void clicarStatusPrivate(){
+        click(statusPrivateInput);
+    }
+
+    public void clicarButtonSubmit(){
+        click(buttonSubmitInput);
+    }
+
+    public String retornaTextoSucesso(){
+        return getText(textoSucessoDiv);
+    }
 
 }
