@@ -7,26 +7,28 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
-
 public class TestBase {
+    public TestBase() {
+    }
+
     @BeforeClass
-    public static void beforeSuite(){
+    public static void beforeSuite() {
         new GlobalParameters();
     }
 
     @Before
-    public void beforeTest(){
+    public void beforeTest() {
         DriverUtils.createInstance();
         DriverUtils.INSTANCE.manage().window().maximize();
         DriverUtils.INSTANCE.navigate().to(GlobalParameters.URL_DEFAULT);
     }
 
     @After
-    public void afterTest(){
+    public void afterTest() {
         DriverUtils.quitInstace();
     }
 
     @AfterClass
-    public static void afterSuite(){
+    public static void afterSuite() {
     }
 }

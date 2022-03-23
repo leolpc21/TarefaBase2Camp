@@ -2,9 +2,10 @@ package TarefaBase2Camp.bases;
 
 import TarefaBase2Camp.GlobalParameters;
 import TarefaBase2Camp.utils.DriverUtils;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.commons.lang3.time.StopWatch;
 
@@ -86,6 +87,11 @@ public class PageBase {
         waitForElement(locator).sendKeys(text);
     }
 
+    protected void sendKeysUpload(By locator, String text){
+        WebElement uploadButton = driver.findElement(locator);
+        uploadButton.sendKeys(text);
+    }
+
     protected void sendKeysWithoutWaitVisible(By locator, String text){
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         WebElement element = driver.findElement(locator);
@@ -105,6 +111,12 @@ public class PageBase {
     protected String getValue(By locator){
         String text = waitForElement(locator).getAttribute("value");
         return text;
+    }
+    
+    protected String getPage(){
+        WebDriver driver = new ChromeDriver();
+        String page = driver.getPageSource();
+        return page;
     }
 
     public void refresh(){
