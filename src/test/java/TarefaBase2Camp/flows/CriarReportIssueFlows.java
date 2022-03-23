@@ -1,23 +1,18 @@
-package TarefaBase2Camp.tests;
+package TarefaBase2Camp.flows;
 
-import TarefaBase2Camp.bases.TestBase;
-import TarefaBase2Camp.flows.LoginFlows;
 import TarefaBase2Camp.pages.CriarReportIssue;
 import TarefaBase2Camp.utils.Utils;
-import org.junit.Assert;
-import org.junit.Test;
 import java.util.Date;
 
-public class CriarReportIssueTest extends TestBase {
-    LoginFlows loginFlows;
+public class CriarReportIssueFlows {
     CriarReportIssue criarReportIssue;
-    Utils utils;
 
-    @Test
-    public void criarReport(){
-        loginFlows = new LoginFlows();
+    public CriarReportIssueFlows(){
         criarReportIssue = new CriarReportIssue();
-        utils = new Utils();
+    }
+
+    public void criarReport(){
+        Utils utils = new Utils();
         Date dataAtual = new Date();
 
         String categoria = "[All Projects] General";
@@ -31,9 +26,7 @@ public class CriarReportIssueTest extends TestBase {
         String campoReproducao = "Campo de descrição para reprodução do problema.";
         String campoAdicionalInfo = "Campo de descrição para informação adicional.";
         String caminhoArquivo = "/src/test/resources/files/anexoExemploB2.jpg";
-        String mensagemSucesso = "Operation successful.";
 
-        loginFlows.efetuarLogin();
         criarReportIssue.clicarNoLink();
         criarReportIssue.selecionarCategory(categoria);
         criarReportIssue.selecionarReproducibility(reprodutibilidade);
@@ -48,7 +41,5 @@ public class CriarReportIssueTest extends TestBase {
         criarReportIssue.adicionarFile(caminhoArquivo);
         criarReportIssue.clicarStatusPrivate();
         criarReportIssue.clicarButtonSubmit();
-
-        Assert.assertEquals(mensagemSucesso,criarReportIssue.retornaTextoSucesso());
     }
 }
