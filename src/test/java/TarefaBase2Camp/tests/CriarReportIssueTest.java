@@ -31,7 +31,6 @@ public class CriarReportIssueTest extends TestBase {
         String campoReproducao = "Campo de descrição para reprodução do problema.";
         String campoAdicionalInfo = "Campo de descrição para informação adicional.";
         String caminhoArquivo = "/src/test/resources/files/anexoExemploB2.jpg";
-        String mensagemSucesso = "Operation successful.";
 
         loginFlows.efetuarLogin();
         criarReportIssue.clicarNoLinkReportIssue();
@@ -49,6 +48,6 @@ public class CriarReportIssueTest extends TestBase {
         criarReportIssue.clicarStatusPrivate();
         criarReportIssue.clicarButtonSubmit();
 
-        //Assert.assertEquals(mensagemSucesso,criarReportIssue.retornaTextoSucesso());
+        Assert.assertTrue(criarReportIssue.retornaTextoSucesso().contains("Operation successful."));
     }
 }

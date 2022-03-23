@@ -27,7 +27,7 @@ public class CriarReportIssueFlows {
         String campoAdicionalInfo = "Campo de descrição para informação adicional.";
         String caminhoArquivo = "/src/test/resources/files/anexoExemploB2.jpg";
 
-        criarReportIssue.clicarNoLink();
+        criarReportIssue.clicarNoLinkReportIssue();
         criarReportIssue.selecionarCategory(categoria);
         criarReportIssue.selecionarReproducibility(reprodutibilidade);
         criarReportIssue.selecionarSeverity(gravidade);
