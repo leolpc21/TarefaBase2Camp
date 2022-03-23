@@ -2,6 +2,7 @@ package TarefaBase2Camp.bases;
 
 import TarefaBase2Camp.GlobalParameters;
 import TarefaBase2Camp.utils.DriverUtils;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -110,6 +111,12 @@ public class PageBase {
     protected String getValue(By locator){
         String text = waitForElement(locator).getAttribute("value");
         return text;
+    }
+    
+    protected String getPage(){
+        WebDriver driver = new ChromeDriver();
+        String page = driver.getPageSource();
+        return page;
     }
 
     public void refresh(){

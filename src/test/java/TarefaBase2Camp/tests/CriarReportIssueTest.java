@@ -4,9 +4,9 @@ import TarefaBase2Camp.bases.TestBase;
 import TarefaBase2Camp.flows.LoginFlows;
 import TarefaBase2Camp.pages.CriarReportIssue;
 import TarefaBase2Camp.utils.Utils;
+import org.junit.Assert;
 import org.junit.Test;
 import java.util.Date;
-import static org.junit.Assert.assertEquals;
 
 public class CriarReportIssueTest extends TestBase {
     LoginFlows loginFlows;
@@ -15,7 +15,6 @@ public class CriarReportIssueTest extends TestBase {
 
     @Test
     public void criarReport(){
-
         loginFlows = new LoginFlows();
         criarReportIssue = new CriarReportIssue();
         utils = new Utils();
@@ -52,7 +51,7 @@ public class CriarReportIssueTest extends TestBase {
         criarReportIssue.clicarStatusPrivate();
         criarReportIssue.clicarButtonSubmit();
 
-        assertEquals(mensagemSucesso, criarReportIssue.retornaTextoSucesso().contains(mensagemSucesso));
+        Assert.assertEquals(mensagemSucesso,criarReportIssue.retornaTextoSucesso());
 
     }
 }

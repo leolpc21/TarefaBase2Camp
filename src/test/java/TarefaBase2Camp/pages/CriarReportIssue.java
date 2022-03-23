@@ -19,7 +19,7 @@ public class CriarReportIssue extends PageBase {
     By fileInput = By.id("ufile[]");
     By statusPrivateInput = By.xpath("//input[@value='50']");
     By buttonSubmitInput = By.xpath("//input[@value='Submit Report']");
-    By textoSucessoDiv = By.xpath("//div[contains(text(),’Operation successful.’)]");
+    By textoSucessoDiv = By.xpath("//div[@align='center']");
 
     public void clicarNoLink(){
         click(linkText);
