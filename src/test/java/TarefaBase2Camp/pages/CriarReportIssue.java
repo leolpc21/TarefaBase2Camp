@@ -21,7 +21,7 @@ public class CriarReportIssue extends PageBase {
     By buttonSubmitInput = By.xpath("//input[@value='Submit Report']");
     By textoSucessoDiv = By.xpath("//div[@align='center']");
 
-    public void clicarNoLink(){
+    public void clicarNoLinkReportIssue(){
         click(linkText);
     }
 
