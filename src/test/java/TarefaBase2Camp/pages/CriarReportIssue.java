@@ -81,5 +81,4 @@ public class CriarReportIssue extends PageBase {
     public String retornaTextoSucesso(){
         return getText(textoSucessoDiv);
     }
-
 }

@@ -83,6 +83,12 @@ public class PageBase {
         }
     }
 
+    protected void clickCheckbox(By locator, String text){
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        WebElement element = driver.findElement(locator);
+        element.click();
+    }
+
     protected void sendKeys(By locator, String text){
         waitForElement(locator).sendKeys(text);
     }
@@ -106,6 +112,11 @@ public class PageBase {
     protected String getText(By locator){
         String text = waitForElement(locator).getText();
         return text;
+    }
+
+    protected String getPartialText(By locator){
+        String text = waitForElement(locator).getText();
+        return text.substring(21);
     }
 
     protected String getValue(By locator){
