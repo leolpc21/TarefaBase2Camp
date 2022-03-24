@@ -5,7 +5,7 @@ import TarefaBase2Camp.pages.LoginPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LoginTests extends TestBase {
+    public class LoginTests extends TestBase {
     LoginPage loginPage;
 
     @Test
