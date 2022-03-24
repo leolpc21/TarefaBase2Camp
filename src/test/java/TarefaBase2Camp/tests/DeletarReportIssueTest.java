@@ -7,7 +7,7 @@ import TarefaBase2Camp.pages.DeletarReportIssue;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class DeletarReportIssueTest extends TestBase{
+    public class DeletarReportIssueTest extends TestBase{
     LoginFlows loginFlows;
     CriarReportIssueFlows criarReportIssueFlows;
     DeletarReportIssue deletarReportIssue;
