@@ -98,6 +98,12 @@ public class PageBase {
         element.sendKeys(text);
     }
 
+    protected void clear(By locator){
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        WebElement element = driver.findElement(locator);
+        element.clear();
+    }
+
     protected void comboBoxSelectByVisibleText(By locator, String text){
         Select comboBox = new Select(waitForElement(locator));
         comboBox.selectByVisibleText(text);
