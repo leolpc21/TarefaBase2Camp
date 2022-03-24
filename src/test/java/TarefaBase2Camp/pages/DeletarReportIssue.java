@@ -17,24 +17,31 @@ public class DeletarReportIssue extends PageBase {
     public String textoLinkText(){
         return getPartialText(partialLinkText);
     }
+
     public void clicarNoLinkMyView(){
         click(myViewLinkText);
     }
+
     public void clicarNoLinkReportedByMe(){
         click(reportedByMeLinkText);
     }
+
     public void clicarNoCheckboxIssue(){
         click(checkboxInput);
     }
+
     public void selecionarOption(String opcao){
         comboBoxSelectByVisibleText(optionSelect, opcao);
     }
+
     public void clicarNoButtonOk(){
         click(okButton);
     }
+
     public void clicarNoButtonDeleteIssue(){
         click(deleteIssueButton);
     }
+
     public String retornaTextoTabela(){
         return getText(textoTable);
     }
