@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import java.util.Date;
 
-    public class CriarReportIssueTest extends TestBase {
+public class CriarReportIssueTest extends TestBase{
     LoginFlows loginFlows;
     CriarReportIssue criarReportIssue;
     Utils utils;
