@@ -11,6 +11,8 @@ public class DeletarProfileFlows {
 
     public void deletarProfile(String profile) {
 
+        deletarProfile.clicarNoLinkMyAccount();
+        deletarProfile.clicarNoLinkProfiles();
         deletarProfile.selecionarOption(profile);
         deletarProfile.clicarDeleteProfile();
         deletarProfile.clicarButtonSubmit();
