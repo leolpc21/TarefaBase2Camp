@@ -3,19 +3,17 @@ package TarefaBase2Camp.pages;
 import TarefaBase2Camp.bases.PageBase;
 import org.openqa.selenium.By;
 
-public class CriarCategoria extends PageBase {
-    By passwordInput = By.name("password");
-    By buttonSubmitInput = By.xpath("//input[@value='Login']");
+public class ValidarCategoria extends PageBase {
+
+    By linkManageText = By.linkText("Manage");
     By linkManageProjectsText = By.linkText("Manage Projects");
     By nameInput = By.name("name");
     By buttonAddCategoryInput = By.xpath("//input[@value='Add Category']");
+    By textoApplicationErro = By.xpath("//table//tr//td//p");
 
-    public void preencherPassword(String senha){
-        sendKeys(passwordInput,senha);
-    }
 
-    public void clicarButtonSubmit(){
-        click(buttonSubmitInput);
+    public void clicarNoLinkManage(){
+        click(linkManageText);
     }
 
     public void clicarNoLinkManageProjects(){
@@ -28,5 +26,9 @@ public class CriarCategoria extends PageBase {
 
     public void clicarButtonAddCategory(){
         click(buttonAddCategoryInput);
+    }
+
+    public String retornaTextoErro(){
+        return getText(textoApplicationErro);
     }
 }
