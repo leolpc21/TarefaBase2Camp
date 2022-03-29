@@ -18,6 +18,7 @@ public class DeletarReportIssueTest extends TestBase{
         criarReportIssueFlows = new CriarReportIssueFlows();
         deletarReportIssue = new DeletarReportIssue();
 
+        //Necessário que tenha o Profile "PC Windows 11";
         String opcao = "Delete";
 
         loginFlows.efetuarLogin();

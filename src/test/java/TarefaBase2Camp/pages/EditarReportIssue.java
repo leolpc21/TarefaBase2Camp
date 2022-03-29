@@ -4,7 +4,7 @@ import TarefaBase2Camp.bases.PageBase;
 import org.openqa.selenium.By;
 
 public class EditarReportIssue extends PageBase {
-
+    
     By editLinkText = By.cssSelector("a[href^='bug_update_page.php?bug_id=']");
     By statusSelect = By.name("status");
     By resolutionSelect = By.name("resolution");

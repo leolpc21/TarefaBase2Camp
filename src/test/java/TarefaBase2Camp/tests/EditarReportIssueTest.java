@@ -2,7 +2,6 @@ package TarefaBase2Camp.tests;
 
 import TarefaBase2Camp.bases.TestBase;
 import TarefaBase2Camp.flows.CriarReportIssueFlows;
-import TarefaBase2Camp.flows.DeletarReportIssueFlows;
 import TarefaBase2Camp.flows.LoginFlows;
 import TarefaBase2Camp.pages.EditarReportIssue;
 import TarefaBase2Camp.utils.Utils;
@@ -14,17 +13,16 @@ public class EditarReportIssueTest extends TestBase{
     LoginFlows loginFlows;
     CriarReportIssueFlows criarReportIssueFlows;
     EditarReportIssue editarReportIssue;
-    DeletarReportIssueFlows deletarReportIssueFlows;
 
     @Test
     public void editarReport() {
         loginFlows = new LoginFlows();
         criarReportIssueFlows = new CriarReportIssueFlows();
         editarReportIssue = new EditarReportIssue();
-        deletarReportIssueFlows = new DeletarReportIssueFlows();
         Utils utils = new Utils();
         Date dataAtual = new Date();
 
+        //Necessário que tenha o Profile "PC Windows 11";
         String status = "confirmed";
         String resolution = "won't fix";
         String campoTitulo = "Titulo Editado teste " + utils.getNowDate(dataAtual);
@@ -49,7 +47,5 @@ public class EditarReportIssueTest extends TestBase{
 
         Assert.assertTrue(editarReportIssue.retornaTextoHistory().contains(campoTitulo));
         Assert.assertTrue(editarReportIssue.retornaTextoHistory().contains(nomeArquivo));
-
-        deletarReportIssueFlows.deletarReport();
     }
 }
