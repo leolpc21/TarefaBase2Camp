@@ -3,6 +3,7 @@ package TarefaBase2Camp.flows;
 import TarefaBase2Camp.pages.CriarReportIssue;
 import TarefaBase2Camp.utils.Utils;
 import java.util.Date;
+import java.util.Random;
 
 public class CriarReportIssueFlows {
     CriarReportIssue criarReportIssue;
@@ -14,6 +15,8 @@ public class CriarReportIssueFlows {
     public void criarReport(){
         Utils utils = new Utils();
         Date dataAtual = new Date();
+        Random randomGenerator  = new Random();
+        int randomInt = randomGenerator.nextInt(1000);
 
         String categoria = "[All Projects] General";
         String reprodutibilidade = "unable to reproduce";
@@ -21,7 +24,7 @@ public class CriarReportIssueFlows {
         String prioridade = "urgent";
         String perfil = "PC Windows 11";
         String atribuir = "leonardo.costa";
-        String campoTitulo = "Titulo teste " + utils.getNowDate(dataAtual);
+        String campoTitulo = "Titulo teste " + utils.getNowDate(dataAtual) + " " + randomInt;
         String campoDescricao = "Campo de descrição do problema.";
         String campoReproducao = "Campo de descrição para reprodução do problema.";
         String campoAdicionalInfo = "Campo de descrição para informação adicional.";

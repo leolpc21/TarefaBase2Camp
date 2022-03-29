@@ -1,26 +1,26 @@
 package TarefaBase2Camp.tests;
 
 import TarefaBase2Camp.bases.TestBase;
-import TarefaBase2Camp.flows.DeletarProfileFlows;
 import TarefaBase2Camp.flows.LoginFlows;
 import TarefaBase2Camp.pages.CriarProfile;
 import org.junit.Assert;
 import org.junit.Test;
+import java.util.Random;
 
 public class CriarProfileTest extends TestBase{
     LoginFlows loginFlows;
     CriarProfile criarprofile;
-    DeletarProfileFlows deletarProfileFlows;
 
     @Test
     public void criarProfile() {
         loginFlows = new LoginFlows();
         criarprofile = new CriarProfile();
-        deletarProfileFlows = new DeletarProfileFlows();
+        Random randomGenerator  = new Random();
+        int randomInt = randomGenerator.nextInt(1000);
 
         String platform = "PC";
         String os = "Windows";
-        String osVersion = "2022";
+        String osVersion = "2022." + randomInt;
         String description = "Descrição adicional do Profile";
         String profile = platform + " " + os + " " + osVersion;
 
@@ -34,7 +34,5 @@ public class CriarProfileTest extends TestBase{
         criarprofile.clicarButtonAddProfile();
 
         Assert.assertTrue(criarprofile.retornaTextoProfile().contains(profile));
-
-        deletarProfileFlows.deletarProfile(profile);
     }
 }

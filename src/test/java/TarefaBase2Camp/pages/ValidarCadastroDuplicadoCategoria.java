@@ -3,7 +3,7 @@ package TarefaBase2Camp.pages;
 import TarefaBase2Camp.bases.PageBase;
 import org.openqa.selenium.By;
 
-public class ValidarCategoria extends PageBase {
+public class ValidarCadastroDuplicadoCategoria extends PageBase {
 
     By linkManageText = By.linkText("Manage");
     By linkManageProjectsText = By.linkText("Manage Projects");
