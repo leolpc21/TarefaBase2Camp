@@ -11,7 +11,6 @@ public class ValidarCadastroDuplicadoCategoria extends PageBase {
     By buttonAddCategoryInput = By.xpath("//input[@value='Add Category']");
     By textoApplicationErro = By.xpath("//table//tr//td//p");
 
-
     public void clicarNoLinkManage(){
         click(linkManageText);
     }
