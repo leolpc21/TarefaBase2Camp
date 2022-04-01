@@ -2,7 +2,6 @@ package TarefaBase2Camp.bases;
 
 import TarefaBase2Camp.GlobalParameters;
 import TarefaBase2Camp.utils.DriverUtils;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -92,12 +91,6 @@ public class PageBase {
         uploadButton.sendKeys(text);
     }
 
-    protected void sendKeysWithoutWaitVisible(By locator, String text){
-        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-        WebElement element = driver.findElement(locator);
-        element.sendKeys(text);
-    }
-
     protected void clear(By locator){
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         WebElement element = driver.findElement(locator);
@@ -117,41 +110,5 @@ public class PageBase {
     protected String getPartialText(By locator){
         String text = waitForElement(locator).getText();
         return text.substring(21);
-    }
-
-    protected String getValue(By locator){
-        String text = waitForElement(locator).getAttribute("value");
-        return text;
-    }
-    
-    protected String getPage(){
-        WebDriver driver = new ChromeDriver();
-        String page = driver.getPageSource();
-        return page;
-    }
-
-    public void refresh(){
-        DriverUtils.INSTANCE.navigate().refresh();
-    }
-
-    public void navigateTo(String url){
-        DriverUtils.INSTANCE.navigate().to(url);
-    }
-
-    public void openNewTab(){
-        javaScriptExecutor.executeScript("window.open();");
-    }
-    public void closeTab(){
-        driver.close();
-    }
-
-    public String getTitle(){
-        String title = driver.getTitle();
-        return title;
-    }
-
-    public String getURL(){
-        String url = driver.getCurrentUrl();
-        return url;
     }
 }
